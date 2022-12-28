@@ -5,11 +5,11 @@ import TodoInterface from "./TodoInterface";
 import { removeTodo } from "./todoSlice";
 
 const ListTodo = () => {
-    const todoList = useSelector((state: RootState) => state.todo.todoList)
+    const todoList = useSelector( ( state: RootState ) => state.todo.todoList )
     const dispatch = useDispatch();
 
-    const handleRemoveTodo = (uuid: string) => {
-        dispatch(removeTodo(uuid))
+    const handleRemoveTodo = ( uuid: string ) => {
+        dispatch( removeTodo( uuid ) )
     }
 
     return (
@@ -24,13 +24,17 @@ const ListTodo = () => {
                 </thead>
                 <tbody>
                     {
-                        todoList.map((todoItem: TodoInterface) => (
-                            <tr key={todoItem.uuid}>
-                                <td>{todoItem.todo}</td>
-                                <td>{todoItem.created}</td>
-                                <td><button onClick={() => handleRemoveTodo(todoItem.uuid)}>Remove</button></td>
+                        todoList.map( ( todoItem: TodoInterface ) => (
+                            <tr key={ todoItem.uuid }>
+                                <td>{ todoItem.todo }</td>
+                                <td>{ todoItem.created }</td>
+                                <td>
+                                    <button onClick={ () => handleRemoveTodo( todoItem.uuid ) }>
+                                        Remove
+                                    </button>
+                                </td>
                             </tr>
-                        ))
+                        ) )
                     }
                 </tbody>
             </table>

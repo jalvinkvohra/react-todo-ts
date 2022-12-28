@@ -1,3 +1,4 @@
+
 .container {
   container-type: inline-size;
   container-name: main
@@ -37,6 +38,7 @@
 .add-todo {
   display: grid;
   grid-template-columns: 1fr;
+  align-self: flex-start;
 }
 
 .add-todo {
@@ -51,4 +53,14 @@
 .add-todo button {
   max-width: 100px;
   margin: 0px auto;
+}
+
+.formControl {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.formControl label {
+  font-weight: 800;
 }
